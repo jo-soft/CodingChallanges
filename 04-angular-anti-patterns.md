@@ -103,7 +103,6 @@ interface UserData {
 }
 
 @Component({
-  standalone: true,
   imports: [ReactiveFormsModule],
   template: `
     <form [formGroup]="userForm">
@@ -133,6 +132,7 @@ export class UserEditComponent {
 - `effect()` only calls `setValue()` — a true, minimal side effect.
 - The `@if (userForm)` guard in the template is no longer needed since `userForm` is never `undefined`.
 - `TypedForm<UserData>` makes the form **type-safe**.
+- no `standalone: true` anymore since it's the default for angular 19+
 
 ---
 
